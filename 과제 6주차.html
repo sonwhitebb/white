@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기 소개 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 각 셀에 마우스를 올렸을 때 해당 셀과 해당 시간대의 수업 배경색 및 텍스트 색상 변경
+            $("table td").hover(function() {
+                // 해당 셀과 해당 시간대의 수업 배경색 및 텍스트 색상 변경
+                $(this).css({
+                    "background-color": "lightgray",
+                    "color": "black",
+                    "font-weight": "bold"
+                }); // 배경색 및 텍스트 색상 변경
+                // 해당 시간대의 빈 시간 배경색 초기화
+                $(this).siblings().filter(function() {
+                    return $(this).text() === ""; // 빈 시간대 선택
+                }).css("background-color", ""); // 빈 시간 배경색 초기화
+            }, function() {
+                // 마우스가 벗어날 때 배경색 및 텍스트 색상 초기화
+                $(this).css({
+                    "background-color": "",
+                    "color": "",
+                    "font-weight": ""
+                }); 
+            });
+        });
+        
+    </script>
+    <script>
+   $(document).ready(function() {
+    $("details").click(function() {
+        // details 요소가 닫혀있을 때 스크롤 효과를 적용
+        if (!$(this).prop("open")) {
+            $('html, body').animate({
+                scrollTop: $(this).offset().top // 클릭된 요소로 스크롤
+            }, 500);
+        }
+    });
+});
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>자기 소개 페이지</h1>
+        <hr>
+        <h3>안녕하세요! 저는 김현준 입니다.</h3>
+        <p>순천향대학교에서 컴퓨터 공학을 전공하고 있는 대학교 1학년 학생입니다. 프로그래밍과 웹 개발에 큰 관심이 있어 이 분야를 더 깊게 공부하고 싶습니다.</p>
+        <hr>
+    
+        <nav>
+            <ul>
+                <li><a href="#A">취미</a></li>
+                <li><a href="#B">꿈</a></li>
+                <li><a href="#C">좋아하는 책</a></li>
+                <li><a href="#D">이메일 주소</a></li>
+                <li><a href="#E">시간표</a></li>
+            </ul>
+        </nav>
+        <hr>
+    
+        <div class="hobby-dream-container">
+            <div class="hobby-section" id="A">
+                <details>
+                    <summary><b>[취미]</b></summary>
+                    <p>제 취미는 영상 편집, 사진 촬영과 편집, 게임, 추리만화, 번역 등 매우 많습니다. 영상 편집의 경우, 파이널컷 프로를 통해 영상에 여러가지 형태의 자막을 구현할 수 있고 키프레임을 활용한 간단한 모션그래픽을 구현해낼 수 있습니다. 휴대폰으로 일상 사진을 찍는 것을 좋아하며 포토스케이프라는 프로그램으로 사진편집(합성)하는 것을 즐겨합니다. 가끔 일본 만화를 한국어로 번역하는(엄밀히 따지면 불법입니다.. 모르는척 해주세요)작업을 해보기도 합니다. 번역의 경우 간단히 일본어 -> 한국어로 번역시(만화 번역 좋아함) 어떤 식으로 번역하면 자연스러울까 등을 고민해보는 일입니다.</p>
+                </details>
+            </div>
+    
+            <div class="dream-section" id="B">
+                <details>
+                    <summary><b>[꿈]</b></summary>
+                    <p>솔직히... 제 원래의 꿈은 취미를 종합하여 이것저것 해보고 싶었던 것이 꿈이였다만 생각보다 제 꿈을 좋게 받아들이지 않는 부모님들로 현재는 '인공지능 자율주행'을 관련하여 다루는 소프트웨어 프로그래머가 되고싶게 되었(?)습니다.</p>
+                </details>
+            </div>
+        </div>
+
+        <div id="C">
+            <details>
+                <summary><b>[좋아하는 책]</b></summary>
+                <p>어릴때부터 책을 많이 읽지 않다보니 뭔가 딱 생각나는게 없습니다. 몇개만 꼽자면 김초엽 작가님의 <지구 끝의 온실>, 손원평 작가님의 <아몬드> 정도 꼽을수 있겠습니다... 그러나 영상편집과 유튜브 관련 책을 더 많이 읽어봤다는것이 옥의티이며, 그보다 더 많이 읽은것은 무려 만화책(현재 진행형...)입니다.</p>
+            </details>
+        </div>
+
+        <div id="D">
+            <details>
+                <summary><b>[이메일 주소]</b></summary>
+                <p>
+                    <a href="mailto:godofblackboard@gmail.com">godofblackboard@gmail.com(개인 구글)</a><br>
+                    <a href="mailto:hyunjunkim112@gmail.com">hyunjunkim112@gmail.com(비즈니스    구글)</a><br>
+                    <a href="mailto:applehj05@naver.com">applehj05@naver.com(개인 네이버)</a><br>
+                    여기서 가장 많이 쓰는 메일은 개인 구글 이메일 입니다.
+                </p>
+            </details>
+        </div>
+
+        <div id="E">
+            <details>
+                <summary><b>[시간표]</b></summary>
+                <p>
+                    <table border="1">
+                        <caption>수업 시간표</caption>
+                        <tr>
+                            <td>시간/요일</td>
+                            <td>월요일</td>
+                            <td>화요일</td>
+                            <td>수요일</td>
+                            <td>목요일</td>
+                            <td>금요일</td>
+                        </tr>
+                        <tr>
+                            <td>9:00~10:00</td>
+                            <td rowspan="3">웹프로그래밍</td>
+                            <td rowspan="2">컴퓨터개론</td>
+                            <td></td>
+                            <td rowspan="2">글쓰기</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10:00~11:00</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11:00~12:00</td>
+                            <td></td>
+                            <td rowspan="3">파이썬프로그래밍</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12:00~13:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13:00~14:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14:00~15:00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="3">일반수학</td>
+                            <td rowspan="3">컴퓨터코딩과문제해결</td>
+                        </tr>
+                        <tr>
+                            <td>15:00~16:00</td>
+                            <td rowspan="1">컴퓨터개론</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16:00~17:00</td>
+                            <td></td>
+                            <td rowspan="2">파이썬실습</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17:00~18:00</td>
+                            <td></td>
+                            <td rowspan="1">자기개발전공</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </p>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

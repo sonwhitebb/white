@@ -1,0 +1,154 @@
+    /* style.css */
+
+    /* 전체 페이지 스타일 */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightblue;
+        margin: 10;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h3 {
+        text-align: center;
+        color: #333;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+
+    /* 네비게이션 스타일 */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: right; /* 항목들을 우측에 정렬 */
+    }
+
+    nav ul li {
+        display: inline;
+        margin-left: 10px; /* 여백을 오른쪽이 아닌 왼쪽에 추가 */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #666;
+        background-color: transparent; /* 배경색을 투명으로 설정 */
+        padding: 5px 10px; /* 각 링크의 여백을 조정 */
+        border-radius: 5px; /* 모서리를 둥글게 만들기 */
+    }
+
+    nav ul li a:hover {
+        color: #000;
+        background-color: #f0f0f0; /* 마우스를 가져다 댈 때 배경색을 변경 */
+    }
+
+    /* 취미와 꿈을 가로로 배열하는 div의 스타일 */
+    .hobby-dream-container {
+        display: flex; /* Flexbox 레이아웃을 사용하여 요소들을 가로로 배열 */
+        justify-content: space-between; /* 요소들 사이의 공간을 균등하게 분배하여 좌우 정렬 */
+    }
+
+    /* 취미와 꿈 섹션의 스타일 */
+    .hobby-section, .dream-section {
+        display: inline-block;  /* 인라인 블록 요소로 설정하여 가로로 배열 */
+        flex: 1; /* 각 섹션을 동일한 너비로 설정하여 공간을 균등하게 분배 */
+        padding: 10px; /* 내부 여백 추가 */
+    }
+
+    /* 마지막 섹션의 오른쪽 마진을 0으로 설정하여 간격을 없앰 */
+    .dream-section:last-child {
+        margin-right: 0;
+    }
+
+    /* 시간표 테이블 스타일 */
+    table {
+        width: 100%; /* 테이블 너비를 100%로 설정하여 부모 요소에 맞게 조절 */
+        border-collapse: collapse; /* 테두리가 겹치지 않도록 설정 */
+        border: 2px solid #333; /* 테이블 전체에 테두리를 추가 */
+    }
+
+    /* 테이블 셀 스타일 */
+    table td, table th {
+        border: 1px solid #ccc; /* 각 셀에 테두리를 추가 */
+        padding: 8px; /* 내부 여백 추가 */
+    }
+
+    /* 캡션 스타일 */
+    table caption {
+        font-weight: bold; /* 캡션 텍스트 굵게 표시 */
+        margin-bottom: 10px; /* 캡션과 테이블 사이의 간격 조절 */
+        color: #333; /* 캡션 텍스트 색상 설정 */
+        font-size: 18px; /* 캡션 텍스트 크기 설정 */
+        text-align: center; /* 캡션 텍스트 가운데 정렬 */
+        caption-side: bottom; /* 캡션 위치 설정 */
+    }
+
+    /* 테이블 머리글 스타일 */
+    table th {
+        background-color: #f0f0f0; /* 머리글 배경색 설정 */
+        color: #333; /* 머리글 텍스트 색상 설정 */
+        font-size: 16px; /* 머리글 텍스트 크기 설정 */
+    }
+
+    /* 테이블 데이터 셀 스타일 */
+    table td {
+        /*background-color: #fff; /* 데이터 셀 배경색 설정 */
+        color: #333; /* 데이터 셀 텍스트 색상 설정 */
+        font-size: 14px; /* 데이터 셀 텍스트 크기 설정 */
+        text-align: center; /* 데이터 셀 텍스트 가운데 정렬 */
+    }
+
+    /* 홀수 행의 배경색 변경 */
+    table tr:nth-child(odd) {
+        background-color: #f9f9f9; /* 홀수 행 배경색 설정 */
+    }
+
+    /* 마지막 열의 오른쪽 테두리 제거 */
+    table tr td:last-child, table tr th:last-child {
+        border-right: none; /* 마지막 열의 오른쪽 테두리 제거 */
+    }
+
+    /* 시간표 테이블 스타일 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #000;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* "자기 소개 페이지" 글씨의 색상을 랜덤으로 변경하는 효과 */
+h1 {
+    animation: colorChange 5s infinite alternate; /* 5초 간격으로 색상 변경 */
+}
+
+@keyframes colorChange {
+    0% { color: red; } /* 시작 색상 */
+    25% { color: blue; } /* 중간 색상 1 */
+    50% { color: green; } /* 중간 색상 2 */
+    75% { color: orange; } /* 중간 색상 3 */
+    100% { color: purple; } /* 종료 색상 */
+}
+/* details 요소가 열릴 때 스크롤 효과를 추가 */
+details[open] summary {
+    font-weight: bold; /* 열린 상태에서 텍스트를 볼드체로 변경 */
+    color: blue; /* 열린 상태에서 텍스트 색상 변경 */
+    transition: color 0.3s ease; /* 색상 변화에 대한 부드러운 전환 효과 적용 */
+}
+
+
+
